@@ -1,60 +1,54 @@
 // const BasePage = new Page(page);
 const { expect } = require('@playwright/test');
 
-module.exports.CommonMethods = class CommonMethods {
-
-  constructor (page) {
-    this.page = page;
-  }
+class CommonMethods {
   
-  async openWebPage (url) {
-    await this.page.goto(url);
+  async openWebPage (page, url) {
+    await page.goto(url);
   };
 
-  async checkTitle (value) {
-    await expect(this.page).toHaveTitle(value);
+  async findElement (page, selector) {
+    const element = await page.locator(selector);
+    return element;
+  }
+
+  async clickButton (page, button) {
+    const selector = await this.findElement(page, button);
+    await selector.click();
   };
 
-  async checkURL (value) {
-    await expect(this.page).toHaveURL(value);
+  async fillInput(page, input, value) {
+    const selector = await this.findElement(page, input);
+    await selector.fill(value);
+  }
+
+  async checkValue (page, element, value) {
+    const selector = await this.findElement(page, element);
+    await expect(selector).toHaveValue(value);
   };
 
-  async clickButton (page, locator) {
-    await [page][locator].click();
+  async checkTitle (page, value) {
+    await expect(page).toHaveTitle(value);
   };
 
+  async checkURL (page, value) {
+    await expect(page).toHaveURL(value);
+  };
 
-  // async findElement (selector) {
-  //   const element = await $(selector)
-  //   return element
-  // }
+  async checkDisabled (page, element) {
+    const selector = await this.findElement(page, element);
+    await expect(selector).toBeDisabled();  
+  };
 
-  // async buttonClick (element) {
-  //   const selector = await this.findElement(element)
-  //   await selector.waitForDisplayed({ timeout: 5000 })
-  //   await selector.click()
-  // };
+  async checkEnabled (page, element) {
+    const selector = await this.findElement(page, element);
+    await expect(selector).toBeEnabled();  
+  };
 
-  // async dropDownButtonClick (button1, button2) {
-  //   await this.buttonClick(button1)
-  //   await this.buttonClick(button2)
-  // };
-
-  // async inputFieldSetValue (input, value) {
-  //   const selector = await this.findElement(input)
-  //   await selector.waitForDisplayed({ timeout: 5000 })
-  //   await selector.setValue(value)
-  // };
-
-  // async checkValue (field, value) {
-  //   const selector = await this.findElement(field)
-  //   await selector.waitForDisplayed({ timeout: 5000 })
-  //   await expect(selector).toHaveTextContaining(value)
-  // };
-
-  // async check_ (element) {
-  //   const selector = await this.findElement(element)
-  //   await expect(await selector).toBeDisplayed({ wait: 5000 })
-  // }
-
+  async checkEmpty (page, element) {
+    const selector = await this.findElement(page, element);
+    await expect(selector).toBeEmpty();  
+  };
 }
+
+module.exports = new CommonMethods()

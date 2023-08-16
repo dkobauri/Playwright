@@ -1,22 +1,7 @@
-const { expect } = require('@playwright/test');
+class HomePage {
 
-exports.HomePage = class HomePage {
-
-  /**
-   * @param {import('@playwright/test').Page} page
-   */
-  constructor(page) {
-    this.page = page;
-    this.InternetBankLogInButton = page.getByRole('button', { name: 'ინტერნეტ ბანკი link' });
-  }
-
-  async goto() {
-    await this.page.goto('https://rebank.ge/');
-    await expect(this.page).toHaveTitle('რებანკი - ტოპქარდი, სესხი, რეფინანსირება, ანაბარი');
-  }
-
-  async internetBankLogIn() {
-    await this.InternetBankLogInButton.click();
-  }
+  get InternetBankLogInButton () { return 'button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButtonBase-root.sc-4e3981bd-0.ciCWre.css-174lsgt' };
 
 };
+
+module.exports = new HomePage()
