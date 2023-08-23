@@ -9,7 +9,7 @@ test.describe('პაროლის აღდგენა', () => {
   
     // Forgot Password Page
     await CommonMethods.openWebPage(page, Data.TestResetPassword);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.fillInput(page, ForgotPasswordPage.personalNumberInput, '00000000000')
     await CommonMethods.checkValue(page, ForgotPasswordPage.personalNumberInput, '00000000000');
     await CommonMethods.clickButton(page, ForgotPasswordPage.logInButton);
@@ -20,7 +20,7 @@ test.describe('პაროლის აღდგენა', () => {
   
     // Forgot Password Page
     await CommonMethods.openWebPage(page, Data.TestResetPassword);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.checkEmpty(page, ForgotPasswordPage.personalNumberInput);
     await CommonMethods.clickButton(page, ForgotPasswordPage.logInButton);
     await CommonMethods.checkText(page, ForgotPasswordPage.errorHint, 'მომხმარებელი ვერ მოიძებნა');
@@ -30,7 +30,7 @@ test.describe('პაროლის აღდგენა', () => {
   
     // Forgot Password Page
     await CommonMethods.openWebPage(page, Data.TestResetPassword);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.fillInput(page, ForgotPasswordPage.personalNumberInput, '01006006923')
     await CommonMethods.checkValue(page, ForgotPasswordPage.personalNumberInput, '01006006923');
     await CommonMethods.clickButton(page, ForgotPasswordPage.logInButton);
@@ -46,7 +46,7 @@ test.describe('პაროლის აღდგენა', () => {
   
     // Forgot Password Page
     await CommonMethods.openWebPage(page, Data.TestResetPassword);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.fillInput(page, ForgotPasswordPage.personalNumberInput, '01006006923')
     await CommonMethods.checkValue(page, ForgotPasswordPage.personalNumberInput, '01006006923');
     await CommonMethods.clickButton(page, ForgotPasswordPage.logInButton);
@@ -62,7 +62,7 @@ test.describe('პაროლის აღდგენა', () => {
   
     // Forgot Password Page
     await CommonMethods.openWebPage(page, Data.TestResetPassword);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.fillInput(page, ForgotPasswordPage.personalNumberInput, '01006006923')
     await CommonMethods.checkValue(page, ForgotPasswordPage.personalNumberInput, '01006006923');
     await CommonMethods.clickButton(page, ForgotPasswordPage.logInButton);
