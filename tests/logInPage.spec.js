@@ -9,7 +9,7 @@ test.describe('ავტორიზაცია', () => {
   
     // Login Page
     await CommonMethods.openWebPage(page, Data.TestLoginURL);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.fillInput(page, LoginPage.userNameInput, 'test');
     await CommonMethods.checkValue(page, LoginPage.userNameInput, 'test');
     await CommonMethods.fillInput(page, LoginPage.passwordInput, 'testera');
@@ -33,7 +33,7 @@ test.describe('ავტორიზაცია', () => {
   
     // Login Page
     await CommonMethods.openWebPage(page, Data.TestLoginURL);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.fillInput(page, LoginPage.userNameInput, 'test');
     await CommonMethods.checkValue(page, LoginPage.userNameInput, 'test');
     await CommonMethods.clickButton(page, LoginPage.logInButton);
@@ -44,7 +44,7 @@ test.describe('ავტორიზაცია', () => {
   
     // Login Page
     await CommonMethods.openWebPage(page, Data.TestLoginURL);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.fillInput(page, LoginPage.passwordInput, 'testera');
     await CommonMethods.checkValue(page, LoginPage.passwordInput, 'testera');
     await CommonMethods.clickButton(page, LoginPage.logInButton);
@@ -56,7 +56,7 @@ test.describe('ავტორიზაცია', () => {
   
     // Login Page
     await CommonMethods.openWebPage(page, Data.TestLoginURL);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.fillInput(page, LoginPage.userNameInput, 'ananemsadze');
     await CommonMethods.checkValue(page, LoginPage.userNameInput, 'ananemsadze');
     await CommonMethods.fillInput(page, LoginPage.passwordInput, 'Test222!');
@@ -74,7 +74,7 @@ test.describe('ავტორიზაცია', () => {
   
     // Login Page
     await CommonMethods.openWebPage(page, Data.TestLoginURL);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.fillInput(page, LoginPage.userNameInput, 'ananemsadze');
     await CommonMethods.checkValue(page, LoginPage.userNameInput, 'ananemsadze');
     await CommonMethods.fillInput(page, LoginPage.passwordInput, 'Test222!');
