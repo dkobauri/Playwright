@@ -27,6 +27,11 @@ class CommonMethods {
     await expect(selector).toHaveValue(value);
   };
 
+  async checkText (page, element, text) {
+    const selector = await this.findElement(page, element);
+    await expect(selector).toHaveText(text);
+  };
+
   async checkTitle (page, value) {
     await expect(page).toHaveTitle(value);
   };
