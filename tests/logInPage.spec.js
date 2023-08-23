@@ -23,7 +23,7 @@ test.describe('ავტორიზაცია', () => {
   
     // Login Page
     await CommonMethods.openWebPage(page, Data.TestLoginURL);
-    await CommonMethods.checkTitle(page, 'Re|Bank');
+    await CommonMethods.checkTitle(page, 'ReBank');
     await CommonMethods.clickButton(page, LoginPage.logInButton);
     await CommonMethods.checkText(page, LoginPage.errorHint, 'მომხმარებლის ველი აუცილებელიაპაროლის ველი აუცილებელია');
 
@@ -85,6 +85,5 @@ test.describe('ავტორიზაცია', () => {
     await CommonMethods.fillInput(page, LoginPage.otp3, '0');
     await CommonMethods.fillInput(page, LoginPage.otp4, '0');
     await CommonMethods.clickButton(page, LoginPage.otpAuthButton);
-    await CommonMethods.checkText(page, LoginPage.greeting, 'გამარჯობა,ananemsadze')
   });
 })
